@@ -5,6 +5,8 @@ Interactive 3D diorama of a nostalgic Japanese Showa era street corner featuring
 ## Overview
 
 Showa Street Diorama is a WebGL showcase built with Three.js. It recreates the cozy atmosphere of a retro Tokyo neighborhood. Users can inspect detailed 3D architecture, watch falling sakura blossoms, adjust the time of day, and listen to looping background music.
+<img width="1901" height="938" alt="image" src="https://github.com/user-attachments/assets/d94bce5c-a8f1-497a-9ed7-7b2347d16a33" />
+<img width="1890" height="916" alt="image" src="https://github.com/user-attachments/assets/859e6a05-39bd-484b-9395-90553230c9e6" />
 
 ## Tech Stack
 
