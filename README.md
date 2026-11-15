@@ -1,6 +1,6 @@
 # Showa Street Diorama
 
-Interactive 3D diorama of a nostalgic Japanese Showa era street corner featuring Hidamari ramen cafe, an oden cart, sakura trees, a 24-hour dynamic sky, relaxing audio ambience, and mobile landscape support.
+Interactive 3D diorama of Japanese street corner featuring Hidamari ramen cafe, an oden cart, ...
 
 ## Overview
 
