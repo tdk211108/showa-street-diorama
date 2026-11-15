@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Local tool configs
+.clinerules
+.mcp.json
+
+# Scratch and temporary files
+rework_road_divider_line_plan.md
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
