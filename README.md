@@ -1,6 +1,7 @@
 # Showa Street Diorama
 
-Interactive 3D diorama of Japanese street corner featuring Hidamari ramen cafe, an oden cart, ...
+Interactive 3D diorama of Japanese street corner featuring Hidamari ramen cafe, an oden cart,...
+
 Demo link: https://tdk211108.github.io/showa-street-diorama/
 ## Overview
 
