@@ -1,7 +1,7 @@
 # Showa Street Diorama
 
 Interactive 3D diorama of Japanese street corner featuring Hidamari ramen cafe, an oden cart, ...
-
+Demo link: https://tdk211108.github.io/showa-street-diorama/
 ## Overview
 
 Showa Street Diorama is a WebGL showcase built with Three.js. It recreates the cozy atmosphere of a retro Tokyo neighborhood. Users can inspect detailed 3D architecture, watch falling sakura blossoms, adjust the time of day, and listen to looping background music.
