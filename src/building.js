@@ -15,56 +15,6 @@ import * as THREE from 'three';
  *  3. Zero facade Z-fighting around the vending machine nook and entrance doorway.
  */
 
-function createPrecisionStringerGeometry(width = 0.06) {
-  const profile = [
-    [-1.80, 0.25],
-    [-4.00, 3.75],
-    [-4.60, 3.75],
-    [-4.60, 3.59],
-    [-4.08, 3.59],
-    [-1.98, 0.25]
-  ];
-
-  const triIndices2D = [
-    [0, 1, 5],
-    [1, 4, 5],
-    [1, 2, 4],
-    [2, 3, 4]
-  ];
-
-  const hx = width / 2;
-  const positions = [];
-  const uvs = [];
-
-  function pushTri(p1, p2, p3) {
-    positions.push(p1[0], p1[1], p1[2], p2[0], p2[1], p2[2], p3[0], p3[1], p3[2]);
-    uvs.push(0, 0, 1, 0, 1, 1);
-  }
-
-  triIndices2D.forEach(([a, b, c]) => {
-    const pa = profile[a], pb = profile[b], pc = profile[c];
-    pushTri([hx, pa[1], pa[0]], [hx, pb[1], pb[0]], [hx, pc[1], pc[0]]);
-    pushTri([-hx, pa[1], pa[0]], [-hx, pc[1], pc[0]], [-hx, pb[1], pb[0]]);
-  });
-
-  for (let i = 0; i < profile.length; i++) {
-    const pA = profile[i];
-    const pB = profile[(i + 1) % profile.length];
-    const v0 = [-hx, pA[1], pA[0]];
-    const v1 = [ hx, pA[1], pA[0]];
-    const v2 = [ hx, pB[1], pB[0]];
-    const v3 = [-hx, pB[1], pB[0]];
-    pushTri(v0, v2, v1);
-    pushTri(v0, v3, v2);
-  }
-
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
-  geo.computeVertexNormals();
-  return geo;
-}
-
 function addHollowFrameZ(parent, cx, cy, cz, totalW, totalH, depthZ, frameThick, material) {
   const topGeo = new THREE.BoxGeometry(totalW, frameThick, depthZ);
   const topMesh = new THREE.Mesh(topGeo, material);
@@ -134,14 +84,6 @@ export function initBuilding(scene, textures) {
     metalness: 0.05
   });
 
-  // Dark weathered timber material for the side exterior staircase (with wood grain texture)
-  const darkStairWoodMat = new THREE.MeshStandardMaterial({
-    map: textures.woodSlat,
-    color: 0x4a2e1e,
-    roughness: 0.68,
-    metalness: 0.06
-  });
-
   const warmWoodMat = new THREE.MeshStandardMaterial({
     color: 0x7c4528,
     roughness: 0.58,
@@ -176,20 +118,6 @@ export function initBuilding(scene, textures) {
     color: 0x242629,
     roughness: 0.45,
     metalness: 0.80
-  });
-
-  const galvanizedMetalMat = new THREE.MeshStandardMaterial({
-    color: 0x969da2,
-    roughness: 0.40,
-    metalness: 0.75
-  });
-
-  const kawaraMat = new THREE.MeshStandardMaterial({
-    map: textures.kawaraTile,
-    color: 0x2c2f34,
-    roughness: 0.40,
-    metalness: 0.20,
-    side: THREE.DoubleSide
   });
 
   const awningMat = new THREE.MeshStandardMaterial({
